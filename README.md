@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project. This project is about an online shop website where you are the admin. Therefore, you will create one proper store and after that post as many products as you wish.
+
+## Technologies
 
 ## Getting Started
 
