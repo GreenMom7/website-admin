@@ -17,6 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   name: z.string().min(1),
@@ -42,8 +43,15 @@ export const StoreModal = () => {
       // window.location.assign(`/${response.data.id}`);
 
       console.log(response.data);
+
+      toast.success("Succesfully created the store");
+
+      //redirect to our store page
+      window.location.assign(`/${response.data.id}`);
     } catch (error) {
-      console.log(error);
+      toast.error("Failed creating the store");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -65,17 +73,27 @@ export const StoreModal = () => {
                   <FormItem>
                     <FormLabel>Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Shop Name" {...field} />
+                      <Input
+                        placeholder="Shop Name"
+                        {...field}
+                        disabled={loading}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
               <div className="pt-6 space-x-2 flex items-center justify-end w-full">
-                <Button variant="outline" onClick={storeModal.onClose}>
+                <Button
+                  disabled={loading}
+                  variant="outline"
+                  onClick={storeModal.onClose}
+                >
                   Cancel
                 </Button>
-                <Button type="submit">Continue</Button>
+                <Button disabled={loading} type="submit">
+                  Continue
+                </Button>
               </div>
             </form>
           </Form>
