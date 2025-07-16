@@ -11,7 +11,9 @@ const DashboarPage = async ({ params }: DashboardPageProps) => {
       id: resolvedparams.storeId,
     },
   });
-  return <div>Active Store : {store?.name}</div>;
+  return (
+    <div className="m-9 text-base font-mono">Active Store : {store?.name}</div>
+  );
 };
 
 export default DashboarPage;
