@@ -1,5 +1,4 @@
 "use client";
-import Modal from "@/components/ui/modal";
 import { UserButton } from "@clerk/nextjs";
 import { useStoreModal } from "../../../hooks/use-store-modal";
 import { useEffect } from "react";
@@ -13,11 +12,7 @@ const SetupPage = () => {
       onOpen();
     }
   }, [isOpen, onOpen]);
-  return (
-    <div className="m-8">
-      <UserButton />
-    </div>
-  );
+  return <div className="m-8">Hi</div>;
 };
 
 export default SetupPage;
