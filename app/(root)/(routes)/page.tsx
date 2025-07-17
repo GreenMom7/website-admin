@@ -12,7 +12,7 @@ const SetupPage = () => {
       onOpen();
     }
   }, [isOpen, onOpen]);
-  return <div className="m-8">Hi</div>;
+  return null;
 };
 
 export default SetupPage;
